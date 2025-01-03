@@ -12,6 +12,7 @@ html {
 
 body {
   margin-top: 20px;
+  position: relative;
 }
 
 /*Header*/
@@ -233,6 +234,13 @@ h3 {
   height: 200px;
   -o-object-fit: scale-down;
      object-fit: scale-down;
+  transition-duration: 1s;
+}
+.galeria-contenedor-imagenes .card img:hover {
+  transform: scale(1.5, 1.5);
+  z-index: 100;
+  margin: 5px auto;
+  border-radius: 10px;
 }
 .galeria-contenedor-imagenes .card .card-body {
   margin: 0 auto;
