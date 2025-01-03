@@ -1,3 +1,22 @@
+/*VARIABLES*/
+$color-primary: #AA4400;
+$color-secondary: #808000;
+$color-terciary: #008000;
+$font-size-principal: 16px;
+$text-shadow: darkgray;
+
+/*MIXINS*/
+@mixin bigscreen () {
+    @media screen and (max-width: 1400px) {
+        /*SLIDER*/
+        @content;
+        // .h5-slide, .p-slide {
+        //    display: none;
+        // }
+   }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +25,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: $font-size-principal;
 }
 body {
     margin-top: 20px;
@@ -30,7 +49,7 @@ header {
 // Barra de navegacion
 .navbar {
     padding: 2rem;
-    background-color: #f5f6f7;
+    background-image: linear-gradient(to left, #808000, #f5f6f7);
 }
 
 .navbar-collapse {
@@ -74,15 +93,15 @@ header {
 h2 {
     margin: 25px 0;
     font-size: 2.5rem;
-    color: #AA4400;
-    text-shadow: 5px 5px 3px darkgray ;
+    color: $color-primary;
+    text-shadow: 5px 5px 3px $text-shadow ;
 }
 
 
 h3 {
     display: inline-block;
     font-size: 1.5rem;
-    background-color: #808000;
+    background-color: $color-secondary;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 8px 8px 8px darkgray;
@@ -91,7 +110,7 @@ h3 {
 
 /*ASIDE*/
 .principal-aside {
-    border: 1px solid #808000;
+    border: 1px solid $color-secondary;
     overflow: scroll;
     margin-top: 25px;
     
@@ -100,20 +119,33 @@ h3 {
         margin: 25px 0;
     }
 
+    .titulo-aside-intermitencia {
+        opacity: 1;
+        animation: intermitencia 2s 3;
+    }
+
+    @keyframes intermitencia {
+        0% {opacity: 0;}
+        50% {opacity: 0;}
+        60% {opacity: 1;}
+        70% {opacity: 0;}
+        100% {opacity: 1;}    
+    }
+
     .aside-articulo {
         display: flex;
         flex-direction: column;
         align-items: center;
 
         img {
-            box-shadow: 5px 5px 8px darkgray;
+            box-shadow: 5px 5px 8px $text-shadow;
             border-radius: 5px;
             margin: 15px 0;
             width: 60%;
         }
 
         h4 {
-            color:#008000;
+            color: $color-terciary;
         }
 
         p {
@@ -134,7 +166,7 @@ h3 {
         margin: 5px 15px 10px 0;
         float: left;
         width: 45%;  
-        box-shadow: 8px 10px 8px darkgray;     
+        box-shadow: 8px 10px 8px $text-shadow;     
         border-radius: 10px;
 
         
@@ -181,6 +213,10 @@ h3 {
                 margin: 0 auto;
                 width: 50%;
                 background-color: rgba(220, 220, 220, 0.64);
+
+                @include bigscreen() {
+                    display: none;
+                }
             }
         }
         
@@ -208,6 +244,12 @@ h3 {
     .carousel-control-next-icon {
         color: black;
         background-color: black;
+    }
+}
+@media screen and (max-width: 1400px) {
+    /*SLIDER*/
+    .h5-slide, .p-slide {
+       display: none;
     }
 }
 
@@ -309,7 +351,7 @@ h3 {
                 background-color: #F49517;
                 color: white;
                 border-radius: 5px;
-                box-shadow: 5px 5px 5px darkgray;
+                box-shadow: 5px 5px 5px $text-shadow;
                 padding: 0 5px;
                 text-align: center  ;
             }
@@ -443,12 +485,7 @@ h3 {
 
 
 /* Adaptable (Responsivo)*/
-@media screen and (max-width: 1400px) {
-     /*SLIDER*/
-     .h5-slide, .p-slide {
-        display: none;
-     }
-}
+
 
 
 @media screen and (max-width: 991px) {
@@ -508,7 +545,7 @@ h3 {
                     background-color: #F49517;
                     color: white;
                     border-radius: 5px;
-                    box-shadow: 5px 5px 5px darkgray;
+                    box-shadow: 5px 5px 5px $text-shadow;
                     padding: 0 5px;
                     text-align: center  ;
                 }
@@ -593,7 +630,7 @@ h3 {
                     background-color: #F49517;
                     color: white;
                     border-radius: 5px;
-                    box-shadow: 3px 3px 3px darkgray;
+                    box-shadow: 3px 3px 3px $text-shadow;
                     padding: 0 3px;
                     text-align: center  ;
                 }
