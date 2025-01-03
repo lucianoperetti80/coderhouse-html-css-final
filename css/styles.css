@@ -297,12 +297,12 @@ h3 {
   padding: 50px 0 0 50px;
 }
 .form-contacto .form-btn {
+  border-radius: 5px;
   margin: 15px auto;
   width: 35%;
-  background-color: #008000;
+  background-color: #808000;
   padding: 5px 10px;
   color: white;
-  font-weight: bold;
 }
 
 /* FOOTER*/
@@ -313,16 +313,26 @@ h3 {
 }
 .footer-container .footer-titulos {
   width: 75%;
-  margin: 15px 0;
+  margin: 15px auto;
   padding: 10px;
   background-color: blue;
 }
-.footer-container .iconos-redes-sociales {
-  width: 4rem;
-  margin: 15px 2rem;
+.footer-container .icono-red-contenedor {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.footer-container .contacto-container .contacto-detalle-contenedor p {
-  font-size: 1.1rem;
+.footer-container .icono-red-contenedor .icono-red-social {
+  width: 60px;
+}
+.footer-container .contacto-container .contactos-contenedor p {
+  font-size: 1rem;
+}
+.footer-container .contacto-container .contactos-contenedor p a {
+  text-decoration: none;
+}
+.footer-container .contacto-container .contactos-contenedor p a span {
+  color: black;
 }
 .footer-container .contacto-container .icono-ubicacion {
   margin: 0 15px;
@@ -407,6 +417,7 @@ h3 {
     margin: 0 auto;
     padding: 5px;
   }
+  /*FOOTER*/
 }
 @media screen and (max-width: 767px) {
   .logo {
